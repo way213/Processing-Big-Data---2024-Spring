@@ -1,6 +1,4 @@
 # Processing Big Data - 2024 Spring
- Assignments for 
-
 Homework Assignments for CSCI-UA 476 @NYU
 
 Hello! Welcome to my GitHub repository where I store and manage all of my homework assignments for Processing Big Data for Analytics Applications.
