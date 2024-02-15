@@ -25,6 +25,5 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
       result.set(sum);
       context.write(key, result);
     }
-
     
   }
