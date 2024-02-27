@@ -1,0 +1,29 @@
+CREATE EXTERNAL TABLE tv_data (
+    combined STRING,
+    vote_count INT
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\t'
+STORED AS TEXTFILE LOCATION 'hdfs://nyu-dataproc-m/user/way213_nyu_edu/hw4_output';
+
+
+
+WITH parsed_data AS (
+  SELECT 
+    split(combined, ' - ')[0] AS country, 
+    split(combined, ' - ')[1] AS show_name,
+    vote_count
+  FROM 
+    tv_data
+)
+SELECT 
+  country, 
+  show_name, 
+  vote_count
+FROM 
+  parsed_data
+WHERE 
+  country = 'United States'
+ORDER BY 
+  vote_count DESC
+LIMIT 10;
